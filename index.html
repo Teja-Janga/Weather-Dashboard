@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="https://kit.fontawesome.com/df61ee4812.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main class="app" id="app">
+        <header class="topbar">
+            <div class="searchRow">
+                <div class="modeToggle">
+                    <input type="checkbox" id="mode" />
+                    <label for="mode" class="switch">
+                        <img src="Assets/sun.png" alt="" class="sun">
+                        <img src="Assets/moon.png" alt="" class="moon">
+                    </label>
+                </div> 
+                <div class="Input">
+                    <input id="cityInput" type="text" placeholder="City Name..." autocomplete="off" />
+                    <div id="suggestions" class="suggestions" role="listbox" aria-label="City Suggestions"></div>
+                    <button id="locBtn" aria-label="Current location"><i class="fa-solid fa-location-dot"></i></button>
+                </div>
+                <button id="searchBtn" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </header>
+
+        <section class="grid">
+            <div class="status" id="status" aria-live="polite"></div>
+<!--1-->    <div class="card cityClock" id="cityClock"> 
+                <h2 id="cityTitle">—</h2>
+                <div class="timeNow" id="timeNow">--:--</div>
+                <div class="dateNow" id="dateNow">—</div>
+            </div>
+
+<!--2-->    <div class="card currentCard" id="currentCard">
+                <div class="currentLeft">
+                    <div class="bigTemp"><span id="tempNow">—</span></div>
+                    <div class="feels">Feels like:&nbsp;<span id="feelsLike">—</span></div>
+                    <div class="sunTimes">
+                        <div><img src="Assets/Sunrise.png" alt="">Sunrise:&nbsp;<span id="sunrise">—</span></div>
+                        <div><img src="Assets/Sunset.png" alt="">Sunset:&nbsp;<span id="sunset">—</span></div>
+                    </div>
+                </div>
+                <div class="desc" id="desc">—</div>
+                <div class="currentRight">
+                    <div class="miniRow"><span>Humidity</span><img src="Assets/Humidity.gif" alt=""><span id="hum">—</span></div>
+                    <div class="miniRow"><span>Wind</span><img src="Assets/Wind.gif" alt=""><span id="wind">—</span></div>
+                    <div class="miniRow"><span>Pressure</span>
+                        <lottie-player src="Pressure.json" background="transparent"
+                        speed="1" style="width: 50px; height: 45px;" loop autoplay></lottie-player>
+                        <span id="press">—</span>
+                    </div>
+                    <div class="miniRow"><span>Visibility</span>
+                        <lottie-player src="Visibility.json" background="transparent"
+                        speed="1" style="width: 40px; height: 40px;" loop autoplay></lottie-player>
+                        <span id="vis">—</span> 
+                    </div>
+                </div> 
+            </div>
+
+<!--3-->    <div class="card forecast5">
+                <h3>5 Days Forecast:</h3>
+                <div class="strip" id="forecastStrip"></div>
+            </div>
+
+<!--4-->    <div class="card hourly">
+                <h3>Hourly Forecast:</h3>
+                <div class="strip" id="hourlyStrip"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <footer role="contentinfo">
+        <p class="footerText">
+            Built with <span aria-hidden="true">⛅</span> using OpenWeather data • 
+            <a href="https://openweathermap.org" target="_blank" rel="noopener">OpenWeather</a>
+        </p>
+        <p class="footerText">
+            © 2025 Teja Janga  • <a href="https://github.com/Teja-Janga/Weather-Dashboard" target="_blank" rel="noopener">Source
+            <i class="fa-brands fa-github"></i></a>
+        </p>
+    </footer>
+</body>
+</html>

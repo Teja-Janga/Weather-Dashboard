@@ -2,6 +2,9 @@
 A simple and responsive weather app built with HTML, CSS, and JavaScript.  
 It fetches live weather data from the OpenWeather API.
 
+## 🚀 Live Demo
+[Demo Link](https://teja-janga.github.io/Weather-Dashboard/)
+
 ## 🚀 Features
 - Get live weather with local time, sunrise/sunset, humidity, wind, pressure, and visibility.
 - Five‑day forecast and a horizontal hourly strip.
@@ -21,3 +24,6 @@ It fetches live weather data from the OpenWeather API.
 ## 📝 Notes
 - The app is client‑side only and uses fetch calls to OpenWeather endpoints defined in script.js.
 - UI is built with semantic HTML, CSS Grid/Flexbox, and JavaScript for search, render.
+- 
+
+*Project Created by Teja Janga*
